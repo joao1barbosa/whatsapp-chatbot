@@ -14,7 +14,9 @@ const credentialsFactory = new ConfigurationServiceClientCredentialFactory({
     MicrosoftAppPassword: process.env.MicrosoftAppPassword
 });
 
-const botFrameworkAuthentication = new ConfigurationBotFrameworkAuthentication({}, credentialsFactory);
+// const botFrameworkAuthentication = new ConfigurationBotFrameworkAuthentication({}, credentialsFactory);
+
+const botFrameworkAuthentication = new ConfigurationBotFrameworkAuthentication({}); //Config to Local Tests
 const adapter = new CloudAdapter(botFrameworkAuthentication);
 
 const bot = new EchoBot();
